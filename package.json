@@ -1,0 +1,22 @@
+{
+  "name": "schlesinger-capstone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coloradokim/schlesinger-capstone"
+  },
+  "author": "kim schlesinger",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.0",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "monk": "^1.0.1",
+    "unirest": "^0.4.2"
+  }
+}
