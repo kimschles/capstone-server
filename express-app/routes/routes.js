@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var unirest = require('unirest');
-var db = require('monk')('process.env.MONGOLAB_URI');
+var db = require('monk')(process.env.MONGOLAB_URI);
 var searchTerms = db.get('searchTerms');
 
 router.get('/', function(req, res) {});
