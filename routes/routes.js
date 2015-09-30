@@ -72,7 +72,7 @@ router.param('lastname', function(req, res, next, lastname) {
 });
 
 router.get('/stories/:lastname', function(req, res, next) {
-  unirest.get('https://webhose.io/search?token=' + process.env.WEBHOSE_KEY + '=json&q=Congress%20%22' + req.lastname + '%22%20text%3A('+ req.lastname +')&language=english&site_type=news')
+  unirest.get('https://webhose.io/search?token=' + process.env.WEBHOSE_KEY + '=json&q=Congress%20%22' + process.env.req.lastname + '%22%20text%3A('+ process.env.req.lastname +')&language=english&site_type=news')
     .end(function (response) {
       res.status(200).json(response)
     });
