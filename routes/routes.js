@@ -67,11 +67,6 @@ router.get('/topSector/:cid', function(req, res, next) {
 });
 
 router.param('lastname', function(req, res, next, lastname) {
-    req.lastname = lastname;
-    next();
-});
-
-router.param('lastname', function(req, res, next, lastname) {
     req.lastname = lastname.toLowerCase();
     next();
 });
