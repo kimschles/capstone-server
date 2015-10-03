@@ -46,21 +46,21 @@ router.param('cid', function(req, res, next, cid) {
 });
 
 router.get('/show/:cid', function(req, res, next) {
-  unirest.get('http://www.opensecrets.org/api/?method=candSummary&cid=' + req.cid + '&cycle=2016&apikey='+ process.env.OPEN_SECRETS_KEY + '&output=json')
+  unirest.get('http://www.opensecrets.org/api/?method=candSummary&cid=' + req.cid + '&cycle=2016&apikey='+ process.env.OPEN_SECRETS_KEY +'&output=json')
     .end(function (response) {
       res.status(200).json(response)
     });
 });
 
 router.get('/topContributor/:cid', function(req, res, next) {
-  unirest.get('http://www.opensecrets.org/api/?method=candContrib&cid=' + req.cid +'&cycle=2016&apikey='+ process.env.OPEN_SECRETS_KEY + '&output=json')
+  unirest.get('http://www.opensecrets.org/api/?method=candContrib&cid=' + req.cid +'&cycle=2016&apikey='+ process.env.OPEN_SECRETS_KEY +'&output=json')
   .end(function (response) {
     res.status(200).json(response)
   });
 });
 
 router.get('/topSector/:cid', function(req, res, next) {
-  unirest.get('http://www.opensecrets.org/api/?method=candSector&cid=' + req.cid + '&cycle=2016&apikey='+ process.env.OPEN_SECRETS_KEY + '&output=json')
+  unirest.get('http://www.opensecrets.org/api/?method=candSector&cid=' + req.cid + '&cycle=2016&apikey='+ process.env.OPEN_SECRETS_KEY +'&output=json')
   .end(function (response) {
     res.status(200).json(response)
   });
@@ -72,7 +72,7 @@ router.param('lastname', function(req, res, next, lastname) {
 });
 
 router.get('/stories/:lastname', function(req, res, next) {
-  unirest.get('https://webhose.io/search?token=' + process.env.WEBHOSE_KEY + '=json&q=Congress%20%22' + req.lastname + '%22%20text%3A('+ req.lastname +')&language=english&site_type=news')
+  unirest.get('https://webhose.io/search?token='+ process.env.WEBHOSE_KEY +'&format=json&q=%22congress%22%20('+ req.lastname +')%20text%3A('+ req.lastname +')&language=english&site_type=news')
     .end(function (response) {
       res.status(200).json(response)
     });
