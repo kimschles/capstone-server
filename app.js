@@ -17,5 +17,5 @@ app.use(bodyParser.json());
 app.use('/api/financeData', financeData);
 app.use('/api/searchTerms', searchTerms);
 
-app.listen(process.env.PORT || 1985);
-console.log('Yaassss. Server started on localhost://1985');
+app.listen(process.env.PORT);
+console.log('Yaassss. Server started!');
