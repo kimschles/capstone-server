@@ -8,6 +8,15 @@ var searchTerms = db.get('searchTerms');
 
 router.get('/', function(req, res) {});
 
+router.post('/', function(req, res) {
+  searchTerms.insert(req.body, function(err, search) {
+    if (err) {
+      res.send(err);
+    }
+    res.status(201).json(search);
+  });
+});
+
 router.get('/latestsearches', function(req, res) {
   searchTerms.find({ $query: {}, $orderby: { _id: -1 } }, function(err, search) {
     if (err) {
