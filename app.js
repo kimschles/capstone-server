@@ -4,21 +4,26 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var financeData = require('./routes/routes');
 var searchTerms = require('./routes/routes');
-var cors = require('cors');
-
 
 var app = express();
 
+var cors = require('cors');
 app.use(cors());
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+// app.use(function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   next();
+// });
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+app.all('/', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+ });
 
 app.use('/api/financeData', financeData);
 app.use('/api/searchTerms', searchTerms);
