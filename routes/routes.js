@@ -6,12 +6,6 @@ var unirest = require('unirest');
 var db = require('monk')(process.env.MONGOLAB_URI);
 var searchTerms = db.get('searchTerms');
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
 router.get('/', function(req, res) {});
 
 router.post('/', function(req, res) {
