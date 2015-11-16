@@ -3,3 +3,4 @@ npm-debug.log
 
 #Env Variables
 .env
+node_modules
