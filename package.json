@@ -21,5 +21,10 @@
     "mongodb": "^1.4.39",
     "monk": "^1.0.1",
     "unirest": "^0.4.2"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4",
+    "supertest": "^1.1.0"
   }
 }

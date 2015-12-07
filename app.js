@@ -18,3 +18,5 @@ app.use('/api/searchTerms', searchTerms);
 
 app.listen(process.env.PORT || 1985);
 console.log('Yaassss. Server started!');
+
+module.exports = app;

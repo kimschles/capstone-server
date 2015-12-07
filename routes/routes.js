@@ -6,7 +6,14 @@ var unirest = require('unirest');
 var db = require('monk')(process.env.MONGOLAB_URI);
 var searchTerms = db.get('searchTerms');
 
-router.get('/', function(req, res) {});
+router.get('/', function(req, res) {
+  res.json({
+    'search': {
+      method: 'POST',
+      path: '/'
+    }
+  })
+});
 
 router.post('/', function(req, res) {
   searchTerms.insert(req.body, function(err, search) {
